@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Number Guessing Game</title>
+        
+            <link 
+            rel="stylesheet"
+            type="text/css"
+            href="newstyle.css"  >
+            <!--<link 
+            rel="stylesheet"
+            type="text/css"
+            href="bootstrap.css"  >  -->
+        
+    </head>
+        <body>
+        <section class="container">
+        <div class="boxcontent">
+            <h1>GUESS&nbsp;THE&nbsp;NUMBER</h1>
+            <h2>The number lies between 1 and 100.</h2>
+            <label>Enter your guess: </label>
+            <input type="number" id="guessy" onfocus="this.value=''">
+            <section>
+                <br><input type="button"  onclick="GUESS()" value="Submit guess" class="submit" id="btn" >   
+                <br><div id="res"></div>
+                <div id="re"></div>
+            </section>
+        </div>
+        </section>
+    </body>
+    <script type = "text/javascript">
+        var num=Math.floor(Math.random()*100+1);
+        var f=0;
+        var guess;
+        var count=0;
+        function GUESS(){
+            
+            for(var i=0;i<10;i++)
+            {   guess=guessy.value;
+                if(guess==null || guess=='')
+                {
+                    alert("Enter a number between 1 and 100!!");
+                    break;
+                }
+                count++;
+                if(guess==num)
+                {
+                    document.getElementById("res").innerText="CONGRATULATIONS!!! You guessed it right!!";
+                    f=1;
+                    document.getElementById("btn").disabled = true;
+                    document.getElementById("re").innerHTML='';
+                    break;
+                }
+                else if(guess<num)
+                {   f=0;
+                    document.getElementById("res").innerText="Wrong!!! Try a Bigger number!! ";
+                    document.getElementById("re").innerHTML=("Guesses remaining= "+(10-count));
+                    break;
+                }    
+                else
+                {
+                    f=0;
+                    document.getElementById("res").innerText="Wrong!!! Try a Smaller number!!";
+                    document.getElementById("re").innerHTML=("Guesses remaining= "+(10-count));
+                    break;
+                }
+
+                
+            }
+        
+        if(count==10)
+        {   document.getElementById("res").insertAdjacentHTML("afterend","The number was:"+num);
+            document.getElementById("btn").disabled = true;
+        }
+    }
+        </script>
+</html>

@@ -1,0 +1,73 @@
+h1
+{
+    color: darkblue;
+    font-family: cursive;
+    font-style: inherit;
+    font-size: 45px;
+    position: relative;
+}
+.container{
+    
+    align-content: center;
+    min-width: 50%;  
+    max-width: fit-content;
+    padding: 50px;
+    }
+.guessy{
+    position: absolute;
+}
+  
+.boxcontent{
+    background-color:lightblue;
+    border: 30px solid rgb(0, 8, 114) ;
+    padding:inherit;
+    align-items: center;
+    min-width: fit-content;
+    min-height: fit-content;
+    margin: 100px 400px;
+    position: relative;
+    text-align: center;
+}
+}
+h2{
+    font-size: small;
+    font-family:-webkit-pictograph;
+    position: relative;
+}
+.submit{
+    position: relative;
+    align-content: center;
+    border-radius: 10px;
+    position:sticky;
+    shape-margin:0;
+    text-align: center;
+    outline: none;
+}
+.submit:not(:disabled):hover{
+    background-color:royalblue;
+    color:white;
+}
+
+br{
+    align-content: center;
+    position: relative;
+}
+body{
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position:-ms-page;
+    margin: auto;
+    background-image: cross-fade();
+    align-content: center;
+    @media (min-width:1000px) {
+        background-repeat: repeat;
+    }
+}    
+    /*@media(min-height:1000px;)
+{  .boxx{
+    display: block;
+    background-size: cover;
+    background-color: lawngreen;
+}*/
