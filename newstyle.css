@@ -1,23 +1,5 @@
-h1
+.boxcontent
 {
-    color: darkblue;
-    font-family: cursive;
-    font-style: inherit;
-    font-size: 45px;
-    position: relative;
-}
-.container{
-    
-    align-content: center;
-    min-width: 50%;  
-    max-width: fit-content;
-    padding: 50px;
-    }
-.guessy{
-    position: absolute;
-}
-  
-.boxcontent{
     background-color:lightblue;
     border: 30px solid rgb(0, 8, 114) ;
     padding:inherit;
@@ -28,31 +10,68 @@ h1
     position: relative;
     text-align: center;
 }
+h1
+{
+    color: darkblue;
+    font-family: cursive;
+    font-style: inherit;
+    font-size: 45px;
+    position: relative;
 }
-h2{
+}
+h2
+{
     font-size: small;
     font-family:-webkit-pictograph;
     position: relative;
 }
-.submit{
-    position: relative;
+.container
+{
     align-content: center;
-    border-radius: 10px;
+    min-width: 50%;  
+    max-width: fit-content;
+    padding: 50px;
+}
+
+.guessy
+{
+    position: absolute;
+}  
+
+.submit,.rst
+{
+    position: relative;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font:medium;
+    background-color:rgb(202, 243, 243);
+    align-content: center;
+    border-radius: 7px;
+    border-color: blue;
     position:sticky;
     shape-margin:0;
     text-align: center;
     outline: none;
 }
-.submit:not(:disabled):hover{
+.rst:hover, .submit:not(:disabled):hover
+{
     background-color:royalblue;
     color:white;
 }
+.rst:disabled, .submit:disabled
+{
+    color:rgba(16,16,16,0.3); 
+    background-color: rgba(239,239,239,0.3);
+    border: none;
+}
 
-br{
+
+br
+{
     align-content: center;
     position: relative;
 }
-body{
+body
+{
     background-image: url('bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,13 +80,8 @@ body{
     margin: auto;
     background-image: cross-fade();
     align-content: center;
-    @media (min-width:1000px) {
+    @media (min-width:1000px) 
+    {
         background-repeat: repeat;
     }
 }    
-    /*@media(min-height:1000px;)
-{  .boxx{
-    display: block;
-    background-size: cover;
-    background-color: lawngreen;
-}*/
