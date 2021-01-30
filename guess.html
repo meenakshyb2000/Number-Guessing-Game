@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    
     <head>
         <meta charset="utf-8">
         <title>Number Guessing Game</title>
@@ -15,28 +14,31 @@
             href="bootstrap.css"  >  -->
         
     </head>
+    <form id="again">
         <body>
         <section class="container">
         <div class="boxcontent">
-            <h1>GUESS&nbsp;THE&nbsp;NUMBER</h1>
-            <h2>The number lies between 1 and 100.</h2>
-            <label>Enter your guess: </label>
-            <input type="number" id="guessy" onfocus="this.value=''">
-            <section>
-                <br><input type="button"  onclick="GUESS()" value="Submit guess" class="submit" id="btn" >   
-                <br><div id="res"></div>
-                <div id="re"></div>
-            </section>
+                <h1>GUESS&nbsp;THE&nbsp;NUMBER</h1>
+                <h2>The number lies between 1 and 100.</h2>
+                <label>Enter your guess: </label>
+                <input type="number" id="guessy" onfocus="this.value=''">
+                <section>
+                    <br><input type="button"  onclick="GUESS()" value="Submit Guess" class="submit" id="btn" >   
+                    <br><div id="res"></div>
+                    <div id="re"></div>
+                    <br><input type="submit" value='RESET' id='reset' class='rst'>
+                </section>
         </div>
         </section>
-    </body>
+    </body> </form>
     <script type = "text/javascript">
+        document.getElementById("reset").hidden=true;
         var num=Math.floor(Math.random()*100+1);
         var f=0;
         var guess;
         var count=0;
-        function GUESS(){
-            
+        function GUESS()
+        {
             for(var i=0;i<10;i++)
             {   guess=guessy.value;
                 if(guess==null || guess=='')
@@ -47,22 +49,23 @@
                 count++;
                 if(guess==num)
                 {
-                    document.getElementById("res").innerText="CONGRATULATIONS!!! You guessed it right!!";
+                    document.getElementById("res").innerHTML="<span style='color:green; font-weight:bolder; '>CONGRATULATIONS!!! You guessed it right!!</span>";
                     f=1;
                     document.getElementById("btn").disabled = true;
+                    document.getElementById('reset').hidden=false;
                     document.getElementById("re").innerHTML='';
                     break;
                 }
                 else if(guess<num)
                 {   f=0;
-                    document.getElementById("res").innerText="Wrong!!! Try a Bigger number!! ";
+                    document.getElementById("res").innerHTML="<span style='color:red;'>WRONG!!! Try a Bigger number!! </span>";
                     document.getElementById("re").innerHTML=("Guesses remaining= "+(10-count));
                     break;
                 }    
                 else
                 {
                     f=0;
-                    document.getElementById("res").innerText="Wrong!!! Try a Smaller number!!";
+                    document.getElementById("res").innerHTML="<span style='color:red;'>WRONG!!! Try a Smaller number!!</span>";
                     document.getElementById("re").innerHTML=("Guesses remaining= "+(10-count));
                     break;
                 }
@@ -70,10 +73,13 @@
                 
             }
         
-        if(count==10)
-        {   document.getElementById("res").insertAdjacentHTML("afterend","The number was:"+num);
+        if(count==10 && f!=1)
+        {   document.getElementById("res").innerHTML="<span style='color:red;'>WRONG!! Sorry, you have no more guesses left.</span>";
+            document.getElementById("re").innerHTML="The number was:"+num;
             document.getElementById("btn").disabled = true;
+            document.getElementById('reset').hidden=false;
         }
     }
+    
         </script>
 </html>
